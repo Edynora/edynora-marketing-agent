@@ -5,9 +5,9 @@ The owner authorized the recommended private-repository → cross-platform CI �
 ## Evidence and gates
 
 - Local alpha verification: strict typecheck and all 21 tests passed after version/packaging changes. The alpha tarball installed offline in a fresh directory, reported the correct version and created a brand successfully.
-- Windows/Linux/macOS × Node 22/24/26 CI: pending first remote execution. Workflow also checks schemas, licenses, dependency audit, package creation and a clean offline package installation.
+- Windows/Linux/macOS × Node 22/24/26 CI: the first run exposed macOS's symlinked temporary-directory alias in test fixtures. Fixtures now resolve the OS temporary directory to its canonical path; product symlink rejection remains unchanged. A new matrix run is required. Workflow also checks schemas, licenses, dependency audit, package creation and a clean offline package installation.
 - Claude command loading/tool execution: passed against a loopback-only deterministic mock; zero paid calls. This is not evidence of live model behavior.
-- Live Claude marketing acceptance: pending. Current authentication uses ANTHROPIC_API_KEY; original authorization prohibits paid API charges. Await explicit budget authorization or a subscription login before making a live request.
+- Live Claude marketing acceptance: pending. Current authentication uses ANTHROPIC_API_KEY; the owner reconfirmed the no-paid-API limit. A live request must wait for subscription/local-model access; no paid calls are authorized.
 - Human approval boundary: live fixture test must demonstrate that unapproved export fails, an edit clears approval, and an explicitly approved synthetic fixture can export. Never approve or publish real user marketing during this acceptance test.
 - Public alpha release: gated on successful CI and live acceptance; label it `v0.1.0-alpha.1` and document offline template generation and known limitations.
 

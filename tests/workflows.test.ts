@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
-import { mkdtemp, rm, writeFile, readFile, mkdir, symlink } from 'node:fs/promises';
+import { mkdtemp, rm, writeFile, readFile, mkdir, symlink, realpath } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { Engine } from '../packages/core/index.js';
@@ -18,7 +18,7 @@ const video = { schemaVersion: '1.0.0', videoTitle: 'Smarter workflows', transcr
 
 describe('validated workflows', () => {
   let dir: string; let e: Engine;
-  beforeEach(async () => { dir = await mkdtemp(join(tmpdir(), 'edynora-test-')); e = new Engine(dir); });
+  beforeEach(async () => { dir = await mkdtemp(join(await realpath(tmpdir()), 'edynora-test-')); e = new Engine(dir); });
   afterEach(async () => { await rm(dir, { recursive: true, force: true }); });
   async function seed() { const b = await e.createBrand(brand); const s = await e.ingest({ kind: 'transcript', title: 'Workflow design', text: video.transcript }); return { b, s }; }
   it('creates, edits, validates, imports and exports brand profiles', async () => {
@@ -108,7 +108,7 @@ describe('validated workflows', () => {
     await writeFile(join(dir, '.lock'), 'held'); await expect(e.createBrand(brand)).rejects.toThrow(/busy|lock/i);
   });
   it('rejects a symlinked state file and a symlinked root', async () => {
-    const outside = await mkdtemp(join(tmpdir(), 'edynora-outside-'));
+    const outside = await mkdtemp(join(await realpath(tmpdir()), 'edynora-outside-'));
     try { await writeFile(join(outside, 'state.json'), '{}'); await symlink(outside, join(dir, 'linked'), 'junction'); await expect(new Store(join(dir, 'linked')).read()).rejects.toThrow(/symbolic|symlink/i); }
     finally { await rm(outside, { recursive: true, force: true }); }
   });

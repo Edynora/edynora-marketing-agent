@@ -1,13 +1,13 @@
 import { it, expect, beforeEach, afterEach } from 'vitest';
 import { execFileSync, spawnSync } from 'node:child_process';
-import { mkdtemp, rm, writeFile } from 'node:fs/promises';
+import { mkdtemp, rm, writeFile, realpath } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const cli = resolve('dist/packages/cli/index.js');
 let root: string;
-beforeEach(async () => { root = await mkdtemp(join(tmpdir(), 'edynora-cli-')); });
+beforeEach(async () => { root = await mkdtemp(join(await realpath(tmpdir()), 'edynora-cli-')); });
 afterEach(async () => { await rm(root, { recursive: true, force: true }); });
 function run(...args: string[]) { return JSON.parse(execFileSync(process.execPath, [cli, '--workspace', root, ...args], { encoding: 'utf8' })).data; }
 it('executes the complete standalone CLI workflow', () => {

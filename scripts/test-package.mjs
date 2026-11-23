@@ -1,10 +1,10 @@
 import assert from 'node:assert/strict';
 import { spawnSync } from 'node:child_process';
-import { mkdtemp, readFile, rm } from 'node:fs/promises';
+import { mkdtemp, readFile, rm, realpath } from 'node:fs/promises';
 import { join, resolve } from 'node:path';
 import { tmpdir } from 'node:os';
 const pkg = JSON.parse(await readFile('package.json', 'utf8'));
-const consumer = await mkdtemp(join(tmpdir(), 'edynora-packed-'));
+const consumer = await mkdtemp(join(await realpath(tmpdir()), 'edynora-packed-'));
 const npmPath = process.env.npm_execpath;
 if (!npmPath) throw new Error('Run this check through npm run test:package');
 const run = (command, args, cwd) => {
