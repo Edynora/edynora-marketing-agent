@@ -1,0 +1,7 @@
+# Edynora design
+
+The supplied master prompt authorizes implementation through all milestones. Build a Node TypeScript CLI backed by local validated state. Deterministic extracts support nine marketing formats, strategy, 7/30-day calendars and five email campaign types. Users create/import/edit/export brands, ingest text/Markdown or the proposed Video Workflow JSON contract, inspect/edit content, run quality checks, request review, approve a revision and export CSV/JSON/Markdown. Never publish or send.
+
+Approaches considered: a heavyweight workflow server adds deployment and mixed-license complexity; a provider-specific plugin violates independence; a modular TypeScript engine with thin CLI/plugin adapters fits the explicit requirements and is the implementation choice. Sources remain untrusted inert data. All changes invalidate previous approval. Filesystem confinement, atomic state, locks and bounded inputs define local security boundaries. Existing external product compatibility and model-driven Claude behavior require separate evidence.
+
+No UI, cloud deployment, remote publishers or paid model execution are in scope. The owner subsequently confirmed Copyright 2026 Edynora under Apache-2.0. Verify the CLI via spawned processes and packed installation; verify plugin structure using installed Claude Code, and record separately any live-session tests that cannot run without model charges.

@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "code": 0,
+  "messageCalls": 2,
+  "expandedCommand": true,
+  "resultObserved": true,
+  "paidRequests": 0,
+  "transport": "loopback deterministic Anthropic mock",
+  "liveModelTested": false
+}

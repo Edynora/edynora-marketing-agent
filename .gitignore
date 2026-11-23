@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.edynora/
+*.tgz
+.env*
+!.env.example
+coverage/
+work/

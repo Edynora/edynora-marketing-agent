@@ -1,0 +1,8 @@
+{
+  "name": "edynora-marketing-agent",
+  "version": "0.1.0-alpha.1",
+  "description": "Local marketing drafts, calendars, quality checks and explicit human approval through the Edynora core CLI.",
+  "author": { "name": "Edynora" },
+  "license": "Apache-2.0",
+  "keywords": ["marketing", "local-first", "approval"]
+}

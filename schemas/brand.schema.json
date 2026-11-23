@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "businessName": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 10000
+    },
+    "businessDescription": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 10000
+    },
+    "industry": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 10000
+    },
+    "targetAudience": {
+      "minItems": 1,
+      "maxItems": 100,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 10000
+      }
+    },
+    "brandVoice": {
+      "minItems": 1,
+      "maxItems": 100,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 10000
+      }
+    },
+    "productsAndServices": {
+      "minItems": 1,
+      "maxItems": 100,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 10000
+      }
+    },
+    "marketingObjectives": {
+      "minItems": 1,
+      "maxItems": 100,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 10000
+      }
+    },
+    "approvedCallsToAction": {
+      "minItems": 1,
+      "maxItems": 100,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 10000
+      }
+    },
+    "restrictedClaims": {
+      "maxItems": 100,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 10000
+      }
+    },
+    "preferredPlatforms": {
+      "minItems": 1,
+      "maxItems": 9,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "linkedin",
+          "facebook",
+          "instagram",
+          "x",
+          "youtube",
+          "shorts",
+          "newsletter",
+          "blog",
+          "email"
+        ]
+      }
+    },
+    "publishingFrequency": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 70
+    }
+  },
+  "required": [
+    "businessName",
+    "businessDescription",
+    "industry",
+    "targetAudience",
+    "brandVoice",
+    "productsAndServices",
+    "marketingObjectives",
+    "approvedCallsToAction",
+    "restrictedClaims",
+    "preferredPlatforms",
+    "publishingFrequency"
+  ],
+  "additionalProperties": false
+}

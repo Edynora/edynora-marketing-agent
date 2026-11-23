@@ -1,0 +1,12 @@
+{
+  "schemaVersion": "1.0.0",
+  "videoTitle": "Review a workflow",
+  "transcript": "Document your current workflow. Identify repeated tasks. Review automation outputs before using them.",
+  "description": "A workflow education source",
+  "chapters": [{"startSeconds": 0, "title": "Introduction"}],
+  "keyThemes": ["Workflow review"],
+  "audience": ["Educators"],
+  "callsToAction": ["Explore our workflows"],
+  "sourceReferences": [{"label": "Illustrative source reference", "uri": "https://example.org/notes"}],
+  "approvalMetadata": {"status": "draft"}
+}

@@ -1,0 +1,61 @@
+{
+  "name": "edynora-marketing-agent",
+  "version": "0.1.0-alpha.1",
+  "description": "Local-first marketing drafts, calendars and human approval workflows",
+  "license": "Apache-2.0",
+  "author": "Edynora",
+  "private": true,
+  "repository": { "type": "git", "url": "https://github.com/Edynora/edynora-marketing-agent.git" },
+  "bugs": { "url": "https://github.com/Edynora/edynora-marketing-agent/issues" },
+  "bundleDependencies": [
+    "zod",
+    "remark"
+  ],
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "bin": {
+    "edynora": "dist/packages/cli/index.js"
+  },
+  "exports": {
+    ".": "./dist/packages/core/index.js"
+  },
+  "files": [
+    "dist",
+    ".claude-plugin",
+    "commands",
+    "skills",
+    "scripts/claude-bridge.mjs",
+    "schemas",
+    "templates",
+    "examples",
+    "docs",
+    "README.md",
+    "CONTRIBUTING.md",
+    "SECURITY.md",
+    "LICENSE",
+    "NOTICE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && vitest run",
+    "check": "tsc --noEmit -p tsconfig.json",
+    "schemas": "node scripts/schemas.mjs",
+    "licenses": "node scripts/licenses.mjs",
+    "demo": "node scripts/demo.mjs",
+    "test:plugin": "node scripts/test-plugin.mjs",
+    "test:claude-session": "node scripts/test-claude-session.mjs",
+    "test:package": "node scripts/test-package.mjs",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "zod": "4.6.7",
+    "remark": "15.0.1"
+  },
+  "devDependencies": {
+    "typescript": "7.0.2",
+    "vitest": "5.1.1",
+    "@types/node": "26.6.6"
+  }
+}

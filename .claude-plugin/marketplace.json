@@ -1,0 +1,6 @@
+{
+  "name": "edynora-local",
+  "description": "Local Edynora marketing workflow plugin",
+  "owner": { "name": "Edynora" },
+  "plugins": [{ "name": "edynora-marketing-agent", "source": "./", "description": "Local-first marketing workflows with explicit human approval", "version": "0.1.0-alpha.1" }]
+}
