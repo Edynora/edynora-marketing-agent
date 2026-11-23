@@ -2,7 +2,9 @@
 
 **AI Workflows. Intelligent Automation. Smarter Work.**
 
-**0.1.0-alpha.1 — private acceptance candidate.** Offline templates are implemented; live Claude acceptance and cross-platform CI are release gates. See [alpha readiness](docs/ALPHA_READINESS.md).
+**0.1.0-alpha.1 — early alpha.** Uses offline templates, with a live-tested Claude Code adapter. See [alpha readiness](docs/ALPHA_READINESS.md) for verification scope and remaining limits.
+
+[![checks](https://github.com/Edynora/edynora-marketing-agent/actions/workflows/ci.yml/badge.svg)](https://github.com/Edynora/edynora-marketing-agent/actions/workflows/ci.yml)
 
 Local-first marketing workflows for creators, entrepreneurs, marketers, consultants, educators and small businesses. Create reusable brand profiles, import source material, produce nine types of attributed drafts, plan calendars and email sequences, review changes, explicitly approve revisions and export files. The CLI works independently of Claude Code.
 
@@ -20,7 +22,7 @@ node .\dist\packages\cli\index.js doctor
 npm test
 ```
 
-macOS/Linux use the same commands, with `node ./dist/packages/cli/index.js doctor`. See [installation](docs/INSTALLATION.md) for packed installation and the `edynora` executable. Source is being validated in the private [GitHub repository](https://github.com/Edynora/edynora-marketing-agent). npm publication and service deployment are deferred.
+macOS/Linux use the same commands, with `node ./dist/packages/cli/index.js doctor`. See [installation](docs/INSTALLATION.md) for packed installation and the `edynora` executable. Source and alpha releases are hosted in the [GitHub repository](https://github.com/Edynora/edynora-marketing-agent). npm publication and service deployment are deferred.
 
 ## Run your first workflow in PowerShell
 

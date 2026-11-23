@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "authMethod": "claude.ai",
+  "subscriptionType": "pro",
+  "apiKeyCredentialsRemoved": true,
+  "apiKeyFallbackPermitted": false,
+  "paidApiKeyCalls": 0,
+  "model": "sonnet",
+  "generationMethod": "template-v1",
+  "turns": 26,
+  "checks": {
+    "repurpose": true,
+    "inspectAndQuality": true,
+    "unapprovedExportRejected": true,
+    "editCreatesNewVersion": true,
+    "syntheticApprovalAndExport": true,
+    "subsequentEditInvalidatesApproval": true,
+    "staleExportRejected": true
+  },
+  "publishedMarketing": false
+}

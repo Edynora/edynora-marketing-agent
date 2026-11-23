@@ -13,7 +13,7 @@ claude plugin validate . --strict --json
 claude --plugin-dir .
 ```
 
-Then explicitly invoke `/edynora-marketing-agent:status` or `/edynora-marketing-agent:marketing`. A Claude session requires your existing subscription or configured model access, may consume usage, and is not required by the offline CLI. No live paid model request is authorized or performed during development.
+Then explicitly invoke `/edynora-marketing-agent:status` or `/edynora-marketing-agent:marketing`. A Claude session requires your existing subscription or configured model access, may consume usage, and is not required by the offline CLI. The alpha's live acceptance used the owner's existing Pro subscription with API credentials removed for that child process; no paid API-key calls were made.
 
 ## Local marketplace installation
 
@@ -37,3 +37,5 @@ Save as request.json and run `node scripts/claude-bridge.mjs request.json`. For 
 After `npm pack --ignore-scripts`, `npm run test:plugin` extracts the prepared distribution and validates/installs it in a disposable `CLAUDE_CONFIG_DIR` in the parent workspace's work/ directory, then lists the installed plugin, executes its bridge and records evidence. This avoids relying on an uncommitted Git checkout. It requires the OS `tar` utility. This does not modify your real Claude plugin configuration.
 
 `npm run test:claude-session` runs actual Claude Code command loading and a tool execution loop against an ephemeral loopback-only deterministic mock of the Anthropic API. It verifies command expansion, bridge execution and the resulting tool output with zero paid requests. This confirms adapter behavior under a controlled response; it does not verify live model judgment or a paid provider. See FINAL_REPORT.md and the JSON evidence files for results.
+
+`npm run test:subscription` is an opt-in live synthetic acceptance test. It requires an existing Claude subscription login, removes API/provider credentials from its child process, verifies `authMethod: claude.ai`, and refuses API-key fallback. It consumes subscription allowance. It verifies template drafting, quality inspection, blocked unapproved export, editing, synthetic fixture approval/export and post-approval invalidation. It never approves real marketing, publishes or sends anything. Raw session logs remain in the ignored parent work/ directory; only a non-secret summary is saved in docs/claude-subscription-evidence.json. See ALPHA_READINESS.md for the actual executed outcome.

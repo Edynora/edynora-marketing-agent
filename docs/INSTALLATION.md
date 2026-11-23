@@ -36,7 +36,7 @@ npm test
 npm pack --ignore-scripts
 ```
 
-No Bash-specific product scripts are required. Native filesystem mode bits are best-effort; Windows permissions follow the containing directory ACL. Windows Node 26 is tested locally. Node 22/24/26 across Windows/Linux/macOS is defined in CI; see ALPHA_READINESS.md and GitHub Actions for the latest executed status.
+No Bash-specific product scripts are required. Native filesystem mode bits are best-effort; Windows permissions follow the containing directory ACL. Windows Node 26 is tested locally. Node 22/24/26 across Windows/Linux x64 and macOS 26 Intel is defined in CI; see ALPHA_READINESS.md and GitHub Actions for the latest executed status. Apple Silicon runtime behavior is not yet verified. On macOS, choose canonical workspace/input paths: system aliases such as /var or /tmp may be symlinks and are intentionally rejected. `realpath` can resolve an existing alias before use.
 
 ## Upgrade and uninstall
 

@@ -47,6 +47,7 @@
     "test:plugin": "node scripts/test-plugin.mjs",
     "test:claude-session": "node scripts/test-claude-session.mjs",
     "test:package": "node scripts/test-package.mjs",
+    "test:subscription": "node scripts/test-claude-subscription.mjs --use-existing-subscription",
     "prepack": "npm run build"
   },
   "dependencies": {
