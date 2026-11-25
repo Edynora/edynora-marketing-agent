@@ -1,5 +1,10 @@
 # Edynora Marketing Agent
 
+> **Official repository: [EdynoraHQ/edynora-marketing-agent](https://github.com/EdynoraHQ/edynora-marketing-agent)**
+>
+> This personal-account repository is retained as a historical copy. Use the official organization repository linked above for current code, documentation, issues, and releases.
+
+
 **AI Workflows. Intelligent Automation. Smarter Work.**
 
 **0.1.0-alpha.1 — early alpha.** Uses offline templates, with a live-tested Claude Code adapter. See [alpha readiness](docs/ALPHA_READINESS.md) for verification scope and remaining limits.
